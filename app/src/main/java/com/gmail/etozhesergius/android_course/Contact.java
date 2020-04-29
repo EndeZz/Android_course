@@ -1,28 +1,18 @@
 package com.gmail.etozhesergius.android_course;
 
-import android.os.Bundle;
+class Contact{
+    private String name;
+    private String phoneNumber;
 
-import androidx.fragment.app.Fragment;
+    Contact(String name, String phoneNumber){
+        this.name = name;
+        this.phoneNumber = phoneNumber;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-
-/**
- * A simple {@link Fragment} subclass.
- */
-public class Contact extends Fragment {
-
-    public Contact() {
-        // Required empty public constructor
     }
-
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contact, container, false);
+    String getName() {
+            return name;
+    }
+    String getPhoneNumber() {
+        return phoneNumber;
     }
 }
