@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.fragment.app.ListFragment;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.view.ViewGroup;
@@ -14,10 +15,10 @@ import android.content.Context;
 
 public class ContactListFragment extends ListFragment {
     static final Contact[] contacts = {
-            new Contact("Roman Romanov", "+8-800-55-35-35"),
-            new Contact("Тот самый", "112"),
-            new Contact("Мышка", "65465766786"),
-            new Contact("Крыска", "11212"),
+            new Contact("Roman Romanov", "+8-800-55-35-35", R.mipmap.ic_launcher_round),
+            new Contact("Тот самый", "112", R.mipmap.ic_launcher_round),
+            new Contact("Мышка", "65465766786", R.mipmap.ic_launcher_round),
+            new Contact("Крыска", "11212", R.mipmap.ic_launcher_round),
     };
 
     @Override
@@ -31,12 +32,13 @@ public class ContactListFragment extends ListFragment {
                 if (convertView == null) {
                     convertView = getLayoutInflater().inflate(R.layout.fragment_contact_list, null, false);
                 }
+                ImageView imageView = convertView.findViewById(R.id.contactImage);
                 TextView nameView = convertView.findViewById(R.id.tv_name);
                 TextView phoneNumberView = convertView.findViewById(R.id.tv_phoneNumber);
                 Contact currentContact = contacts[i];
                 nameView.setText(currentContact.getName());
                 phoneNumberView.setText(currentContact.getPhoneNumber());
-
+                imageView.setImageResource(currentContact.getImage());
                 return convertView;
             }
         };
@@ -49,5 +51,11 @@ public class ContactListFragment extends ListFragment {
         fragmentTransaction.replace(R.id.fragment_list, ContactDetailsFragment.newInstance(i));
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        getActivity().setTitle("Список контактов");
     }
 }

@@ -32,12 +32,5 @@ public class ContactDetailsFragment extends Fragment {
         detailedContactNumber.setText(ContactListFragment.contacts[index].getPhoneNumber());
         return view;
     }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        getActivity().setTitle("Список контактов");
-
-    }
 }
 

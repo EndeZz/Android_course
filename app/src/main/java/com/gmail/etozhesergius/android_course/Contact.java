@@ -1,14 +1,17 @@
 package com.gmail.etozhesergius.android_course;
 
 class Contact{
-    private String name;
-    private String phoneNumber;
+    private final String name;
+    private final String phoneNumber;
+    private final int image;
 
-    Contact(String name, String phoneNumber){
+    Contact(String name, String phoneNumber, int image){
         this.name = name;
         this.phoneNumber = phoneNumber;
+        this.image = image;
 
     }
+    int getImage() { return image; }
     String getName() {
             return name;
     }
