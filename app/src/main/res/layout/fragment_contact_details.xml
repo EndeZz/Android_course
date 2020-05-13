@@ -53,25 +53,12 @@
             android:background="@drawable/customborder"
             android:text="@string/phone_number_2" />
 
-    </LinearLayout>
 
-    <Button
-        android:id="@+id/btn1"
-        android:layout_width="80dp"
-        android:layout_height="30dp"
-        android:layout_gravity="center"
-        android:text="@string/btn"
-        android:textSize="8sp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="6dp">
         <TextView
             android:id="@+id/email1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:background="@drawable/customborder"
             android:text="@string/e_mail" />
 
@@ -82,21 +69,16 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/customborder"
             android:text="@string/e_mail_2" />
-
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/customborder"
+            android:text="@string/description"/>
     </LinearLayout>
-    <Button
-        android:id="@+id/btn2"
-        android:layout_width="80dp"
-        android:layout_height="30dp"
-        android:layout_gravity="center"
-        android:text="@string/btn"
-        android:textSize="8sp" />
 
-    <EditText
-        android:id="@+id/description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/customborder"
-        android:text="@string/description"/>
+
+
 
 </LinearLayout>
